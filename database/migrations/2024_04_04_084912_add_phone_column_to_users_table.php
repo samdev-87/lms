@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('phone')->unique()->after('email');
-            $table->string('verification_code')->unique()->nullable()->after();
+            $table->string('verification_code')->unique()->nullable();
             $table->string('phone_verified_at')->nullable();
             $table->dropUnique(['email']);
             $table->string('email')->unsigned()->nullable()->change();
