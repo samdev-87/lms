@@ -14,8 +14,9 @@
         <a href="{{ route('admin.home.index') }}" class="text-white text-decoration-none"><span class="fs-4">Admin Panel</span></a>
         <hr/>
         <ul class="nav flex-column">
-            <li><a href="{{ route('admin.home.index') }}" class="nav-link text-white">- Admin - Home</a></li>
-            <li><a href="{{ route('admin.user.index') }}" class="nav-link text-white">- Admin - Users</a></li>
+            <li><a href="{{ route('admin.home.index') }}" class="nav-link text-white">- Home</a></li>
+            <li><a href="{{ route('admin.user.index') }}" class="nav-link text-white">- Users</a></li>
+            <li><a href="{{ route('admin.lesson.index') }}" class="nav-link text-white">- Lessons</a></li>
             <li><a href="{{ route('home.index') }}" class="mt-2 btn bg-primary text-white">Go back to the home page</a>
             </li>
         </ul>

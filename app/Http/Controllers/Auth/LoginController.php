@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -43,7 +43,7 @@ class LoginController extends Controller
         return 'phone';
     }
 
-    protected function credentials(Request $request)
+    /*protected function credentials(Request $request)
     {
         if (is_numeric($request->get('email'))) {
             return [
@@ -61,5 +61,5 @@ class LoginController extends Controller
             'username' => $request->get('email'),
             'password' => $request->get('password')
         ];
-    }
+    }*/
 }

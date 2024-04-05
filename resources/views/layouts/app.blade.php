@@ -16,10 +16,11 @@
 
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
                 @guest
-                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{{route('login')}}">Войти</a>
+                    <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{{route('login')}}">Войти</a>
                 @else
-                    <form id="logout" action="{{ route('logout') }}" method="POST">
-                        <a role="button" class="me-3 py-2 link-body-emphasis text-decoration-none"
+                    <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{{route('admin.home.index')}}">Админ часть</a>
+                    <form class="me-3 py-2" id="logout" action="{{ route('logout') }}" method="POST">
+                        <a role="button" class="link-body-emphasis text-decoration-none"
                            onclick="document.getElementById('logout').submit()">
                             Выйти
                         </a>

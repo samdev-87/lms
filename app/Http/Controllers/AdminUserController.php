@@ -11,7 +11,7 @@ class AdminUserController extends Controller
     {
         $viewData = [];
         $viewData['title'] = 'Admin Page - Users';
-        $viewData['users'] = User::all();
+        $viewData['users'] = User::whereNot('role', 'admin')->get();
 
         return view('admin.user.index')->with('viewData', $viewData);
     }
@@ -26,6 +26,7 @@ class AdminUserController extends Controller
         $user = new User();
         $user->name = $request->input('name');
         $user->phone = $request->input('phone');
+        $user->save();
 
         return back();
     }
