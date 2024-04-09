@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('phone')->unique()->after('email');
-            $table->string('verification_code')->unique()->nullable();
-            $table->string('phone_verified_at')->nullable();
-            $table->dropUnique(['email']);
-            $table->string('email')->unsigned()->nullable()->change();
+//            $table->string('phone')->unique()->after('email');
+//            $table->string('verification_code')->unique()->nullable();
+//            $table->timestamp('phone_verified_at')->nullable();
+//            $table->dropUnique(['email']);
+//            $table->string('email')->unsigned()->nullable()->change();
         });
     }
 
@@ -30,11 +30,11 @@ return new class extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('email')->unsigned()->nullable(false)->change();
-            $table->unique(['email']);
-            $table->dropColumn('phone');
-            $table->dropColumn('verification_code');
-            $table->dropColumn('phone_verified_at');
+//            $table->string('email')->unsigned()->nullable(false)->change();
+//            $table->unique(['email']);
+//            $table->dropColumn('phone');
+//            $table->dropColumn('verification_code');
+//            $table->dropColumn('phone_verified_at');
         });
     }
 };
