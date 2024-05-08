@@ -14,4 +14,13 @@ class HomeController extends Controller
         $viewData['lessons'] = Lesson::all();
         return view('home.index')->with('viewData', $viewData);
     }
+
+    public function lesson($id)
+    {
+        $lesson = Lesson::findOrFail($id);
+        $viewData = [];
+        $viewData['title'] = $lesson->title;
+        $viewData['lesson'] = $lesson;
+        return view('home.lesson')->with('viewData', $viewData);
+    }
 }

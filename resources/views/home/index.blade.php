@@ -11,7 +11,7 @@
         <div class="col-md-6">
             <div class="list-group">
                 @foreach($viewData['lessons'] as $lesson)
-                    <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                    <a href="{{ route('home.lesson', ['id' => $lesson->id]) }}" class="list-group-item list-group-item-action" aria-current="true">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">{{ $lesson->title }}</h5>
                             <small>3 days ago</small>

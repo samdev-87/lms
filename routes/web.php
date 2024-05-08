@@ -16,6 +16,7 @@ Route::get('/', function () { return view('welcome');} );
 
 Route::middleware('client')->group(function () {
     Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home.index');
+    Route::get('/lesson/{id}', 'App\Http\Controllers\HomeController@lesson')->name('home.lesson');
 });
 
 Route::middleware('admin')->group(function () {
@@ -31,6 +32,12 @@ Route::middleware('admin')->group(function () {
     Route::delete('/admin/lessons/{id}/delete', 'App\Http\Controllers\AdminLessonController@delete')->name('admin.lesson.delete');
     Route::get('/admin/lessons/{id}/edit', 'App\Http\Controllers\AdminLessonController@edit')->name('admin.lesson.edit');
     Route::put('/admin/lessons/{id}/update', 'App\Http\Controllers\AdminLessonController@update')->name('admin.lesson.update');
+
+    Route::get('/admin/lesson-tests', 'App\Http\Controllers\AdminLessonTestController@index')->name('admin.lesson-tests.index');
+    Route::post('/admin/lesson-test/store', 'App\Http\Controllers\AdminLessonTestController@store')->name('admin.lesson-test.store');
+    Route::delete('/admin/lesson-test/{id}/delete', 'App\Http\Controllers\AdminLessonTestController@delete')->name('admin.lesson-test.delete');
+    Route::get('/admin/lesson-test/{id}/edit', 'App\Http\Controllers\AdminLessonTestController@edit')->name('admin.lesson-test.edit');
+    Route::put('/admin/lesson-test/{id}/update', 'App\Http\Controllers\AdminLessonTestController@update')->name('admin.lesson-test.update');
 });
 
 Auth::routes();
